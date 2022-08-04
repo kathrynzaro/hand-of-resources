@@ -43,6 +43,12 @@ describe('backend-express-template routes', () => {
     expect(res.status).toBe(200);
     expect(res.body.fav_order).toBe('Paris Brest');
   });
+  it('#DELETE /restaurants/:id should delete a restaurant', async () => {
+    const res = await request(app).delete('/restaurants/5');
+    expect(res.status).toBe(200);
+    const restaurantRes = await request(app).get('/restaurants/5');
+    expect(restaurantRes.status).toBe(404);
+  });
   afterAll(() => {
     pool.end();
   });
