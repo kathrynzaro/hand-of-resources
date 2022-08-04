@@ -54,6 +54,12 @@ describe('backend-express-template routes', () => {
     expect(res.status).toBe(200);
     expect(res.body.dates).toBe('it\'s always cancer season here');
   });
+  it('#DELETE /signs/:id should delete a sign', async () => {
+    const res = await request(app).delete('/signs/11');
+    expect(res.status).toBe(200);
+    const signRes = await request(app).get('/signs/11');
+    expect(signRes.status).toBe(404);
+  });
   afterAll(() => {
     pool.end();
   });
