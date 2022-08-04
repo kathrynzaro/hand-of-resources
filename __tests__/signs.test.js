@@ -47,6 +47,13 @@ describe('backend-express-template routes', () => {
       dates: 'Forever',
     });
   });
+  it('#PUT /signs/:id should update an existing sign', async () => {
+    const res = await request(app).put('/signs/4').send({
+      dates: 'it\'s always cancer season here',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.dates).toBe('it\'s always cancer season here');
+  });
   afterAll(() => {
     pool.end();
   });
