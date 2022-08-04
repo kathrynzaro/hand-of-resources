@@ -11,6 +11,8 @@ describe('backend-express-template routes', () => {
     const res = await request(app).get('/restaurants');
     expect(res.status).toBe(200);
     expect(res.body.length).toEqual(6);
+    const canard = res.body.find((restaurant) => restaurant.id === '6');
+    expect(canard).toHaveProperty('name', 'Canard');
   });
   it('#GET /restaurants/:id should return a single restaurant', async () => {
     const res = await request(app).get('/restaurants/4');
