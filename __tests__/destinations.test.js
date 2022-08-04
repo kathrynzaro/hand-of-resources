@@ -66,6 +66,22 @@ describe('backend-express-template routes', () => {
       state: 'Massachusetts',
     });
   });
+  it('#POST /destinations should create a new destination', async () => {
+    const res = await request(app).post('/destinations').send({
+      name: 'Cape Lookout',
+      type: 'State Park',
+      city: 'Tillamook',
+      state: 'Oregon',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '7',
+      name: 'Cape Lookout',
+      type: 'State Park',
+      city: 'Tillamook',
+      state: 'Oregon',
+    });
+  });
   afterAll(() => {
     pool.end();
   });
