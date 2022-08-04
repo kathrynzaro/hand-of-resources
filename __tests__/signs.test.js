@@ -14,6 +14,19 @@ describe('backend-express-template routes', () => {
     const cancer = res.body.find((sign) => sign.id === '4');
     expect(cancer).toHaveProperty('name', 'Cancer');
   });
+  it('#GET /signs/:id should return a single sign', async () => {
+    const res = await request(app).get('/signs/4');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '4',
+      name: 'Cancer',
+      symbol: 'The Crab',
+      element: 'Water',
+      ruling_planet: 'Moon',
+      modality: 'Cardinal',
+      dates: 'June 21 to July 22',
+    });
+  });
   afterAll(() => {
     pool.end();
   });
