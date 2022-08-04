@@ -36,4 +36,14 @@ describe('backend-express-template routes', () => {
       fav_order: 'Moules Mariniere',
     });
   });
+  it('#PUT /restaurants/:id should update an existing restaurant', async () => {
+    const res = await request(app).put('/restaurants/6').send({
+      fav_order: 'Paris Brest',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.fav_order).toBe('Paris Brest');
+  });
+  afterAll(() => {
+    pool.end();
+  });
 });
