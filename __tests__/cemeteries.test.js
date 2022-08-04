@@ -48,6 +48,12 @@ describe('backend-express-template routes', () => {
     expect(res.status).toBe(200);
     expect(res.body.name).toBe('Hollywood Memorial Cemetery');
   });
+  it('#DELETE /cemeteries/:id should delete a cemetery', async () => {
+    const res = await request(app).delete('/cemeteries/5');
+    expect(res.status).toBe(200);
+    const cemeteryRes = await request(app).get('/cemeteries/5');
+    expect(cemeteryRes.status).toBe(404);
+  });
   afterAll(() => {
     pool.end();
   });
