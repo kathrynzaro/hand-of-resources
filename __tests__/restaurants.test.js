@@ -12,4 +12,14 @@ describe('backend-express-template routes', () => {
     expect(res.status).toBe(200);
     expect(res.body.length).toEqual(6);
   });
+  it('#GET /restaurants/:id should return a single restaurant', async () => {
+    const res = await request(app).get('/restaurants/4');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '4',
+      name: 'Creepy\'s',
+      location: 'SE Morrison St, Portland',
+      fav_order: 'Double Smashie',
+    });
+  });
 });
