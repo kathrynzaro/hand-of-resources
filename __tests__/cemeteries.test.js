@@ -25,6 +25,22 @@ describe('backend-express-template routes', () => {
       established: 1909,
     });
   });
+  it('#POST /cemeteries should create a new cemetery', async () => {
+    const res = await request(app).post('/cemeteries').send({
+      name: 'Pere Lachaise Cemetery',
+      city: 'Paris',
+      state: 'n/a',
+      established: 1804,
+    });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '7',
+      name: 'Pere Lachaise Cemetery',
+      city: 'Paris',
+      state: 'n/a',
+      established: 1804,
+    });
+  });
   afterAll(() => {
     pool.end();
   });

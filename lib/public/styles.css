@@ -4,21 +4,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: mistyrose;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  border: 6px solid black;
+  /* border: 6px solid black; */
   border-radius: 30px;
   padding: 20px;
   width: fit-content;
   margin-top: 30px;
+  background-color: darkred;
 }
 
 a {
   font-family: 'Bungee Inline', cursive;
-  color: black;
+  color: mistyrose;
   font-size: 3.5rem;
   margin: 10px 10px;
 }
