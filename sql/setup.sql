@@ -60,42 +60,42 @@ CREATE TABLE restaurants (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name VARCHAR NOT NULL,
   location VARCHAR NOT NULL,
-  rating VARCHAR NOT NULL
+  fav_order VARCHAR NOT NULL
 );
 
 INSERT INTO
-  restaurants (name, location, rating)
+  restaurants (name, location, fav_order)
 
 VALUES
   (
     'Dot''s Cafe',
     'SE Clinton St, Portland',
-    '8/10'
+    'Jalepeno Cheese Fries'
   ),
   (
     'Skyline Restaurant',
     'NW Skyline Blvd, Portland',
-    '7/10'
+    'New York Burger'
   ),
   (
     'Hungry Tiger',
     'SE 12th Ave, Portland',
-    '9/10'
+    'Vegan Corn Dogs'
   ),
   (
     'Creepy''s',
     'SE Morrison St, Portland',
-    '6/10'
+    'Double Smashie'
   ),
   (
     'Columbian Cafe',
     'Marine Dr, Astoria',
-    '5/10'
+    'Breakfast'
   ),
   (
     'Canard',
     'E Burnside, Portland',
-    '9/10'
+    'Steam Burgers'
   );
 
 CREATE TABLE cemeteries (
