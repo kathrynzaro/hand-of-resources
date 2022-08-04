@@ -14,6 +14,17 @@ describe('backend-express-template routes', () => {
     const newGirl = res.body.find((show) => show.id === '2');
     expect(newGirl).toHaveProperty('year', 2011);
   });
+  it('#GET /shows/:id should return a single show', async () => {
+    const res = await request(app).get('/shows/6');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '6',
+      title: 'Stranger Things',
+      streaming: 'Netflix',
+      favorite_episode: 'The Mall Rats',
+      year: 2016,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
