@@ -41,6 +41,13 @@ describe('backend-express-template routes', () => {
       established: 1804,
     });
   });
+  it('#PUT /cemeteries/:id should update an existing cemetery', async () => {
+    const res = await request(app).put('/cemeteries/6').send({
+      name: 'Hollywood Memorial Cemetery',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.name).toBe('Hollywood Memorial Cemetery');
+  });
   afterAll(() => {
     pool.end();
   });
