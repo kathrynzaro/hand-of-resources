@@ -55,6 +55,17 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+  it('#GET /destinations/:id should return a single destination', async () => {
+    const res = await request(app).get('/destinations/3');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '3',
+      name: 'Revolution Hotel',
+      type: 'Hotel',
+      city: 'Boston',
+      state: 'Massachusetts',
+    });
+  });
   afterAll(() => {
     pool.end();
   });

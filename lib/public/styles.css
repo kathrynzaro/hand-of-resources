@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Bangers&family=Bungee+Inline&family=Chicle&family=Comfortaa:wght@300&family=Creepster&family=Grand+Hotel&family=Great+Vibes&family=Griffy&family=IM+Fell+French+Canon&family=IM+Fell+French+Canon+SC&family=Inconsolata:wght@200&family=Irish+Grover&family=Josefin+Sans&family=Karla&family=Limelight&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@400;700&family=Neonderthaw&family=Nixie+One&family=Oswald&family=Philosopher:wght@400;700&family=Poiret+One&family=Press+Start+2P&family=Raleway:wght@100&family=Roboto+Mono:wght@100&family=Rye&family=Slabo+27px&family=Sora:wght@400;700&family=Space+Mono&family=Spectral&family=Tenor+Sans&family=Ultra&family=Unica+One&family=VT323&family=Varela+Round&family=Yeseva+One&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  border: 6px solid black;
+  border-radius: 30px;
+  padding: 20px;
+  width: fit-content;
+  margin-top: 30px;
+}
+
+a {
+  font-family: 'Bungee Inline', cursive;
+  color: black;
+  font-size: 3.5rem;
+  margin: 10px 10px;
+}
+
+a:hover {
+  opacity: .6;
+}
+
