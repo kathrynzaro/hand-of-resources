@@ -92,4 +92,10 @@ describe('backend-express-template routes', () => {
   afterAll(() => {
     pool.end();
   });
+  it('#DELETE /destinations/:id should delete a destination', async () => {
+    const res = await request(app).delete('/destinations/5');
+    expect(res.status).toBe(200);
+    const destinationRes = await request(app).get('/destinations/5');
+    expect(destinationRes.status).toBe(404);
+  });
 });
