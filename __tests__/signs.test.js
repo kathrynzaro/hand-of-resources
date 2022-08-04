@@ -27,6 +27,26 @@ describe('backend-express-template routes', () => {
       dates: 'June 21 to July 22',
     });
   });
+  it('#POST /signs should create a new sign', async () => {
+    const res = await request(app).post('/signs').send({
+      name: 'Nope',
+      symbol: 'The Nope',
+      element: 'Nothing',
+      ruling_planet: 'Pluto',
+      modality: 'Cardinal',
+      dates: 'Forever',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '13',
+      name: 'Nope',
+      symbol: 'The Nope',
+      element: 'Nothing',
+      ruling_planet: 'Pluto',
+      modality: 'Cardinal',
+      dates: 'Forever',
+    });
+  });
   afterAll(() => {
     pool.end();
   });
