@@ -14,6 +14,17 @@ describe('backend-express-template routes', () => {
     const rosehill = res.body.find((cemetery) => cemetery.id === '3');
     expect(rosehill).toHaveProperty('name', 'Rosehill Cemetery');
   });
+  it('#GET /cemeteries/:id should return a single cemetery', async () => {
+    const res = await request(app).get('/cemeteries/6');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '6',
+      name: 'Hollywood Memorial Park and Cemetery',
+      city: 'Union',
+      state: 'New Jersey',
+      established: 1909,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
