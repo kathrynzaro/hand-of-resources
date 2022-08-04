@@ -22,4 +22,18 @@ describe('backend-express-template routes', () => {
       fav_order: 'Double Smashie',
     });
   });
+  it('#POST /restaurants should create a new restaurant', async () => {
+    const res = await request(app).post('/restaurants').send({
+      name: 'La Moule',
+      location: 'SE Clinton St, Portland',
+      fav_order: 'Moules Mariniere',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '7',
+      name: 'La Moule',
+      location: 'SE Clinton St, Portland',
+      fav_order: 'Moules Mariniere',
+    });
+  });
 });
