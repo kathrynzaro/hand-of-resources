@@ -1,29 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Bangers&family=Bungee+Inline&family=Chicle&family=Comfortaa:wght@300&family=Creepster&family=Grand+Hotel&family=Great+Vibes&family=Griffy&family=IM+Fell+French+Canon&family=IM+Fell+French+Canon+SC&family=Inconsolata:wght@200&family=Irish+Grover&family=Josefin+Sans&family=Karla&family=Limelight&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@400;700&family=Neonderthaw&family=Nixie+One&family=Oswald&family=Philosopher:wght@400;700&family=Poiret+One&family=Press+Start+2P&family=Raleway:wght@100&family=Roboto+Mono:wght@100&family=Rye&family=Slabo+27px&family=Sora:wght@400;700&family=Space+Mono&family=Spectral&family=Tenor+Sans&family=Ultra&family=Unica+One&family=VT323&family=Varela+Round&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Antonio&family=Archivo&family=Arvo:wght@400;700&family=Bangers&family=BioRhyme&family=Bungee+Inline&family=Chicle&family=Comfortaa:wght@300&family=Creepster&family=Encode+Sans+Semi+Expanded&family=Epilogue&family=Grand+Hotel&family=Great+Vibes&family=Griffy&family=IM+Fell+French+Canon&family=IM+Fell+French+Canon+SC&family=Inconsolata:wght@200&family=Inter&family=Irish+Grover&family=Josefin+Sans&family=Karla&family=Lato&family=Limelight&family=Manrope&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@400;700&family=Neonderthaw&family=Nixie+One&family=Oswald&family=Philosopher:wght@400;700&family=Poiret+One&family=Poppins&family=Press+Start+2P&family=Raleway:wght@100&family=Roboto+Mono:wght@100&family=Rye&family=Slabo+27px&family=Sora:wght@400;700&family=Space+Grotesk&family=Space+Mono&family=Spectral&family=Syne&family=Tenor+Sans&family=Ultra&family=Unica+One&family=VT323&family=Varela+Round&family=Yeseva+One&display=swap');
+
 
 body {
+/* CSS HEX */
+--misty-rose: #f4dbd8ff;
+--silver-pink: #bea8a7ff;
+--tuscany: #c09891ff;
+--liver: #775144ff;
+--dark-sienna: #2a0800ff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: mistyrose;
+  background-color: var(--dark-sienna);
+  text-align: center;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  /* border: 6px solid black; */
   border-radius: 30px;
   padding: 20px;
-  width: fit-content;
+  /* width: fit-content; */
   margin-top: 30px;
-  background-color: darkred;
+  font-family: 'Syne', sans-serif;
+  color: var(--silver-pink);
+  margin: 20px 20px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+table {
+  width: 600px;
+}
+
+table, th, td {
+  border: 2.5px solid var(--dark-sienna);
+  border-radius: 5px;
+  border-collapse: collapse;
+  color: var(--tuscany);
+  background-color: var(--liver);
+}
+
+td {
+  padding: 15px 10px;
+  text-align: left;
+  /* font-size: 1.2rem; */
+}
+
+th {
+  text-align: left;
+  padding: 20px 10px;
+  margin: 0;
+  /* font-size: 1.4rem; */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--misty-rose);
+
+}
+
+.link {
+  background-color: var(--tuscany);
+
 }
 
 a {
-  font-family: 'Bungee Inline', cursive;
-  color: mistyrose;
-  font-size: 3rem;
-  margin: 10px 10px;
   text-decoration: none;
+  color: var(--dark-sienna);
+  /* border: 1px solid var(--silver-pink);
+  border-radius: 3px; */
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: .8rem;
+  font-weight: 1000;
 }
 
 a:hover {
