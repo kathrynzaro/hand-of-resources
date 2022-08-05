@@ -48,6 +48,12 @@ describe('backend-express-template routes', () => {
     expect(res.status).toBe(200);
     expect(res.body.favorite_episode).toBe('Cabin');
   });
+  it('#DELETE /shows/:id should delete a show', async () => {
+    const res = await request(app).delete('/shows/5');
+    expect(res.status).toBe(200);
+    const showRes = await request(app).get('/shows/5');
+    expect(showRes.status).toBe(404);
+  });
   afterAll(() => {
     pool.end();
   });
