@@ -21,8 +21,9 @@ main {
 a {
   font-family: 'Bungee Inline', cursive;
   color: mistyrose;
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 10px 10px;
+  text-decoration: none;
 }
 
 a:hover {
