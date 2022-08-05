@@ -25,6 +25,22 @@ describe('backend-express-template routes', () => {
       year: 2016,
     });
   });
+  it('#POST /shows should create a new show', async () => {
+    const res = await request(app).post('/shows').send({
+      title: 'The Bear',
+      streaming: 'Hulu',
+      favorite_episode: 'Brigade',
+      year: 2022,
+    });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '7',
+      title: 'The Bear',
+      streaming: 'Hulu',
+      favorite_episode: 'Brigade',
+      year: 2022,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
