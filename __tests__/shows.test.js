@@ -41,6 +41,13 @@ describe('backend-express-template routes', () => {
       year: 2022,
     });
   });
+  it('#PUT /shows/:id should update an existing show', async () => {
+    const res = await request(app).put('/shows/2').send({
+      favorite_episode: 'Cabin',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.favorite_episode).toBe('Cabin');
+  });
   afterAll(() => {
     pool.end();
   });
